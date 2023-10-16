@@ -40,6 +40,70 @@
             console.log('Welcome',args1  + " " + args2);
         }
         displayNameWithGreeting('Munna', 'kumar')
+
+
+        /*
+        Functions always return something
+
+        Functions may return values;
+
+        values
+            1. Int
+            2. Float/Double
+            3. String            
+        */
+
+
+        // function definitation
+        function Sum(arga1, args2){
+            return arga1 + args2;  
+        }
+
+        // function calling in a variable for storing the return values
+        let result = Sum(10,20) // Actual parameters
+        console.log(result); // 30
+
+
+        // Passing a function as an arguments
+        let result2  = Sum(20, Sum(10,30)) // 1. (20, 40)  // first calling inside function as Sum(10,30) // 40
+        console.log(result2);  // 60
+
+        // 
+        let result3 = Sum(10,(Sum(20,Sum(30,40))))    
+        console.log(result3);  // 100
+
+        // Explnation
+        // 1. Sum(10,Sum(20,70))
+        // 2. Sum(10, 90);
+        // 3. Sum retuen 10 + 90  = 100
+
+
+
+        /*
+        Actual Arguemtn can be
+            1. Int/Float/Double
+            2. String
+            3. can be a function call       
+        */
+
+
+        function a(){
+            return 10;
+        }
+
+        function b(){
+            return 20;
+        }
+
+
+        function returnSomeValues(args1, args2){
+            return args1 + args2
+        }
+
+        // function pasing as an arguments
+        let result4 = returnSomeValues(a(),b());
+        console.log(result4);  // 30
+
     </script>
 </body>
 </html>
