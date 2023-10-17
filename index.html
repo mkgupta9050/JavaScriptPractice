@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,103 +8,113 @@
     <style></style>
     <script></script>
 </head>
+
 <body>
-    
+
     <script>
         /*
-        What are functions?
+            ******************JavaScript Array************************
 
-        Functions are resusable block of code
+            Variable can store 1 value at a time
+            Array can store more than 1 value at a time
+            Array are denoted by Square Bracket []
 
-        // function definitatio
-        function functionName(parameter1, parameter2, parameter3)  // Formal arguments/Parameter
-        {
-            // function body
-            // code to be executed
-        }
+            Syntax
+            var arrayName = [element1,element2,element3,.........];
+            let arrayName = [member1,member2,member3,.........];
+            const arrayName = [index0,index1,index2`,.........];
 
-        calling the function
-        functionName(10, 12, 15) // Actual arguments/parameters
+            arrayName[indexnumber]
         */
 
+        //1. Function Defination  One Time Process
+        function myFunction(x, y) { // x and y are formal argmuent/parametr
+            //Function Body
 
-
-        function functionName(parameter1, parameter2, parameter3) // Formal arguments/Parameter
-        {
-            console.log('Result : ', parameter1 + parameter2 + parameter3);
+            //function may return something
+            return x + y;
         }
 
-        functionName(10,12,15); // Actual arguments/parameters // 37
+
+        //2. Function Calling  Many time Process
+
+        let z = myFunction(10, 20); // 10 and 20 are actual parameter/arguments
+        var a = myFunction(50, 20);
+        //myFunction is a user Defined function
+        //console.log(z);
+
+        //alert(a); //function calling
+
+        //alert is a pre defined function
+
+        var b = myFunction(40, myFunction(50, 20));
+        //alert(b);
 
 
-        function displayNameWithGreeting(args1, args2){
-            console.log('Welcome',args1  + " " + args2);
+        //var student1 = 'Anil';
+
+        var students = ['Aman', "Ranjan", 'Arun', "Sandeep", "Munna"];
+
+
+        //console.log(students[-1]);
+        //console.log(students[5]);
+
+        // console.log('Hello '+students[1]+", How are you?");
+
+        //alert("Hello "+students[4]+" HOw are you?");
+
+        function greet(m) {
+            //console.log('Hello ' + m + ', How are you?');
         }
-        displayNameWithGreeting('Munna', 'kumar')
 
 
         /*
-        Functions always return something
-
-        Functions may return values;
-
-        values
-            1. Int
-            2. Float/Double
-            3. String            
+            for(initialization;condition;increment/decrement){
+            }
         */
 
-
-        // function definitation
-        function Sum(arga1, args2){
-            return arga1 + args2;  
+        for (var i = 0; i <= 4; i++) {
+            greet(students[i]);
         }
 
-        // function calling in a variable for storing the return values
-        let result = Sum(10,20) // Actual parameters
-        console.log(result); // 30
-
-
-        // Passing a function as an arguments
-        let result2  = Sum(20, Sum(10,30)) // 1. (20, 40)  // first calling inside function as Sum(10,30) // 40
-        console.log(result2);  // 60
-
-        // 
-        let result3 = Sum(10,(Sum(20,Sum(30,40))))    
-        console.log(result3);  // 100
-
-        // Explnation
-        // 1. Sum(10,Sum(20,70))
-        // 2. Sum(10, 90);
-        // 3. Sum retuen 10 + 90  = 100
-
-
-
-        /*
-        Actual Arguemtn can be
-            1. Int/Float/Double
-            2. String
-            3. can be a function call       
+        /* greet(students[0]);
+            greet(students[1]);
+            greet(students[2]);
+            greet(students[3]);
+            greet(students[4]);
+            greet(students[5]);
         */
 
-
-        function a(){
-            return 10;
+        function greet2(s) {
+            for (var i = 0; i <= 4; i++) {
+                //console.log('Hello ' + s[i] + ', How are you?');
+            }
         }
 
-        function b(){
-            return 20;
+        greet2(students);
+
+
+        // The 2023 Cricket World Cup is sure to be a memorable event, and it is one that cricket fans around the world are eagerly anticipating.
+        let a1 =["The","2023"];
+        let b1 = [...a1,"Cricket"]; // ... is spread operator
+        let c = [...b1, "World"];
+        let d = [...c, "Cup"];
+        let e = [...d, "is"];
+        let f = [...e, "sure"];
+
+        let para='';
+        for(let i=0; i<f.length;i++){
+            //console.log(f[i]);
+            // para = para + f[i] + ' ';   // not optimize
+            para += f[i] + ' ';   // optimize
         }
+        console.log(para);
 
 
-        function returnSomeValues(args1, args2){
-            return args1 + args2
-        }
 
-        // function pasing as an arguments
-        let result4 = returnSomeValues(a(),b());
-        console.log(result4);  // 30
-
+        
+        
     </script>
 </body>
+
 </html>
